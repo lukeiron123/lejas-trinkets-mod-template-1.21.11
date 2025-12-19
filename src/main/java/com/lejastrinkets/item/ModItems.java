@@ -18,6 +18,14 @@ public class ModItems {
             )
     ));
 
+    public static final Item DIAMOND_RING = registerItem("diamond_ring", new Item(
+            new Item.Settings().registryKey(
+                    RegistryKey.of(
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, "diamond_ring")
+                    )
+            )
+    ));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, name), item);
     }
@@ -27,6 +35,7 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(EMERALD_RING);
+            entries.add(DIAMOND_RING);
         });
     }
 }
