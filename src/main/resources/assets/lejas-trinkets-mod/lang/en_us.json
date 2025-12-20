@@ -1,5 +1,6 @@
 {
   "item.lejas-trinkets-mod.emerald_ring": "Emerald Ring",
   "item.lejas-trinkets-mod.diamond_ring": "Diamond Ring",
-  "item.lejas-trinkets-mod.ruby_necklace": "Ruby Necklace"
+  "item.lejas-trinkets-mod.ruby_necklace": "Ruby Necklace",
+  "itemgroup.lejastrinkets.all_item_group": "Lejas trinkets"
 }
