@@ -26,6 +26,13 @@ public class ModItems {
             )
     ));
 
+    public static final Item RUBY_NECKLACE = registerItem("ruby_necklace", new Item(
+            new Item.Settings().registryKey(
+                    RegistryKey.of(
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"ruby_necklace"))
+            )
+    ));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, name), item);
     }
@@ -36,6 +43,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(EMERALD_RING);
             entries.add(DIAMOND_RING);
+            entries.add(RUBY_NECKLACE);
         });
     }
 }
