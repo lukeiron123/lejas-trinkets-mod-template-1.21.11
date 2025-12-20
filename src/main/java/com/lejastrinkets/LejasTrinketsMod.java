@@ -1,5 +1,6 @@
 package com.lejastrinkets;
 
+import com.lejastrinkets.item.ModItemGroups;
 import com.lejastrinkets.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -13,5 +14,6 @@ public class LejasTrinketsMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModItemGroups.registerItemGroups();
 	}
 }

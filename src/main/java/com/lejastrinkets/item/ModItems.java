@@ -1,5 +1,8 @@
 package com.lejastrinkets.item;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.lejastrinkets.LejasTrinketsMod;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -11,6 +14,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
+        public static final List<Item> ALL_ITEMS = new ArrayList<>();
     public static final Item EMERALD_RING = registerItem("emerald_ring", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
@@ -33,7 +37,22 @@ public class ModItems {
             )
     ));
 
+    public static final Item DIAMOND_NECKLACE = registerItem("diamond_necklace", new Item(
+            new Item.Settings().registryKey(
+                    RegistryKey.of(
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"diamond_necklace"))
+            )
+    ));
+
+    public static final Item GOLD_NECKLACE = registerItem("gold_necklace", new Item(
+            new Item.Settings().registryKey(
+                    RegistryKey.of(
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"gold_necklace"))
+            )
+    ));
+
     private static Item registerItem(String name, Item item) {
+        ALL_ITEMS.add(item);
         return Registry.register(Registries.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, name), item);
     }
 
@@ -44,6 +63,8 @@ public class ModItems {
             entries.add(EMERALD_RING);
             entries.add(DIAMOND_RING);
             entries.add(RUBY_NECKLACE);
+            entries.add(DIAMOND_NECKLACE);
+            entries.add(GOLD_NECKLACE);
         });
     }
 }
