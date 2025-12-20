@@ -1,5 +1,8 @@
 package com.lejastrinkets.item;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.lejastrinkets.LejasTrinketsMod;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -11,6 +14,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
+        public static final List<Item> ALL_ITEMS = new ArrayList<>();
     public static final Item EMERALD_RING = registerItem("emerald_ring", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
@@ -34,6 +38,7 @@ public class ModItems {
     ));
 
     private static Item registerItem(String name, Item item) {
+        ALL_ITEMS.add(item);
         return Registry.register(Registries.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, name), item);
     }
 
