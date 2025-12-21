@@ -17,17 +17,17 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
         public static final List<Item> ALL_ITEMS = new ArrayList<>();
-    public static final Item EMERALD_RING = registerItem("emerald_ring", new EmeraldRingItem(
+    public static final Item IRON_EMERALD_RING = registerItem("iron_emerald_ring", new IronEmeraldRingItem(
             new Item.Settings().registryKey(
                     RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"emerald_ring"))
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"iron_emerald_ring"))
             ).maxCount(1)
     ));
 
-    public static final Item DIAMOND_RING = registerItem("diamond_ring", new Item(
+    public static final Item IRON_DIAMOND_RING = registerItem("iron_diamond_ring", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, "diamond_ring")
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, "iron_diamond_ring")
                     )
             ).maxCount(1)
     ));
@@ -70,8 +70,8 @@ public class ModItems {
         LejasTrinketsMod.LOGGER.info("Registering Mod Items for" + LejasTrinketsMod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            entries.add(EMERALD_RING);
-            entries.add(DIAMOND_RING);
+            entries.add(IRON_EMERALD_RING);
+            entries.add(IRON_DIAMOND_RING);
             entries.add(IRON_RUBY_NECKLACE);
             entries.add(GOLDEN_RUBY_NECKLACE);
             entries.add(IRON_DIAMOND_NECKLACE);

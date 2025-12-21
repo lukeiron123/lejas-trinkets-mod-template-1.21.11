@@ -7,8 +7,8 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 
-public class EmeraldRingItem extends TrinketItem {
-    public EmeraldRingItem(Settings settings) {
+public class IronEmeraldRingItem extends TrinketItem {
+    public IronEmeraldRingItem(Settings settings) {
         super(settings);
     }
 
