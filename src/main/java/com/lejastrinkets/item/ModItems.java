@@ -30,26 +30,34 @@ public class ModItems {
             )
     ));
 
-    public static final Item RUBY_NECKLACE = registerItem("ruby_necklace", new Item(
+    public static final Item IRON_RUBY_NECKLACE = registerItem("iron_ruby_necklace", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"ruby_necklace"))
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"iron_ruby_necklace"))
             )
     ));
 
-    public static final Item DIAMOND_NECKLACE = registerItem("diamond_necklace", new Item(
+    public static final Item GOLDEN_RUBY_NECKLACE = registerItem("golden_ruby_necklace", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"diamond_necklace"))
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"golden_ruby_necklace"))
             )
     ));
 
-    public static final Item GOLD_NECKLACE = registerItem("gold_necklace", new Item(
+    public static final Item IRON_DIAMOND_NECKLACE = registerItem("iron_diamond_necklace", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"gold_necklace"))
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"iron_diamond_necklace"))
             )
     ));
+
+    public static final Item GOLDEN_DIAMOND_NECKLACE = registerItem("golden_diamond_necklace", new Item(
+            new Item.Settings().registryKey(
+                    RegistryKey.of(
+                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"golden_diamond_necklace"))
+            )
+    ));
+
 
     private static Item registerItem(String name, Item item) {
         ALL_ITEMS.add(item);
@@ -62,9 +70,10 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(EMERALD_RING);
             entries.add(DIAMOND_RING);
-            entries.add(RUBY_NECKLACE);
-            entries.add(DIAMOND_NECKLACE);
-            entries.add(GOLD_NECKLACE);
+            entries.add(IRON_RUBY_NECKLACE);
+            entries.add(GOLDEN_RUBY_NECKLACE);
+            entries.add(IRON_DIAMOND_NECKLACE);
+            entries.add(GOLDEN_DIAMOND_NECKLACE);
         });
     }
 }

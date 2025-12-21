@@ -15,7 +15,7 @@ public class ModItemGroups {
 
     public static final ItemGroup ALL_ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(LejasTrinketsMod.MOD_ID, "all_item_group"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.RUBY_NECKLACE))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.GOLDEN_RUBY_NECKLACE))
                     .displayName(Text.translatable("itemgroup.lejastrinkets.all_item_group"))
                     .entries((displayContext, entries) -> {
                         for (Item item : ModItems.ALL_ITEMS) {
