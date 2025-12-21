@@ -1,6 +1,6 @@
 <h1>Leja's Trinkets</h1>
 
-Features:
+Features: 
 ---
     Rings: 
     Equippable rings that gives specific status effects when worn.
