@@ -16,8 +16,8 @@ public class EmeraldRingItem extends TrinketItem {
     public void tick(ItemStack stack, SlotReference slot, LivingEntity entity) {
         if (!entity.getEntityWorld().isClient()) {
             entity.addStatusEffect(new StatusEffectInstance(
-                    StatusEffects.HERO_OF_THE_VILLAGE,
-                    20 * 15,
+                    StatusEffects.SPEED,
+                    20 * 2,
                     0,
                     false,
                     false
