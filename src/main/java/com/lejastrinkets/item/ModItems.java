@@ -2,9 +2,11 @@ package com.lejastrinkets.item;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 import com.lejastrinkets.LejasTrinketsMod;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
@@ -17,54 +19,23 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
         public static final List<Item> ALL_ITEMS = new ArrayList<>();
-    public static final Item IRON_EMERALD_RING = registerItem("iron_emerald_ring", new IronEmeraldRingItem(
-            new Item.Settings().registryKey(
-                    RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"iron_emerald_ring"))
-            ).maxCount(1)
-    ));
+    public static final Item IRON_EMERALD_RING = register("iron_emerald_ring", 180,
+            settings -> new EffectRingItem(settings, StatusEffects.SPEED));
 
-    public static final Item IRON_DIAMOND_RING = registerItem("iron_diamond_ring", new Item(
-            new Item.Settings().registryKey(
-                    RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, "iron_diamond_ring")
-                    )
-            ).maxCount(1)
-    ));
+    public static final Item IRON_DIAMOND_RING = register("iron_diamond_ring", 180,
+            settings -> new EffectRingItem(settings, StatusEffects.SPEED));
 
-    public static final Item IRON_RUBY_NECKLACE = registerItem("iron_ruby_necklace", new Item(
-            new Item.Settings().registryKey(
-                    RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"iron_ruby_necklace"))
-            ).maxCount(1)
-    ));
+    public static final Item IRON_RUBY_NECKLACE = register("iron_ruby_necklace", 180,
+            settings -> new EffectRingItem(settings, StatusEffects.STRENGTH));
 
-    public static final Item GOLDEN_RUBY_NECKLACE = registerItem("golden_ruby_necklace", new Item(
-            new Item.Settings().registryKey(
-                    RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"golden_ruby_necklace"))
-            ).maxCount(1)
-    ));
+    public static final Item GOLDEN_RUBY_NECKLACE = register("golden_ruby_necklace", 100,
+            settings -> new EffectRingItem(settings, StatusEffects.STRENGTH));
 
-    public static final Item IRON_DIAMOND_NECKLACE = registerItem("iron_diamond_necklace", new Item(
-            new Item.Settings().registryKey(
-                    RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"iron_diamond_necklace"))
-            ).maxCount(1)
-    ));
+    public static final Item IRON_DIAMOND_NECKLACE = register("iron_diamond_necklace", 180,
+            settings -> new EffectRingItem(settings, StatusEffects.RESISTANCE));
 
-    public static final Item GOLDEN_DIAMOND_NECKLACE = registerItem("golden_diamond_necklace", new Item(
-            new Item.Settings().registryKey(
-                    RegistryKey.of(
-                            RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"golden_diamond_necklace"))
-            )
-    ));
-
-
-    private static Item registerItem(String name, Item item) {
-        ALL_ITEMS.add(item);
-        return Registry.register(Registries.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, name), item);
-    }
+    public static final Item GOLDEN_DIAMOND_NECKLACE = register("golden_diamond_necklace", 100,
+            settings -> new EffectRingItem(settings, StatusEffects.RESISTANCE));
 
     public static void registerModItems() {
         LejasTrinketsMod.LOGGER.info("Registering Mod Items for" + LejasTrinketsMod.MOD_ID);
@@ -77,5 +48,23 @@ public class ModItems {
             entries.add(IRON_DIAMOND_NECKLACE);
             entries.add(GOLDEN_DIAMOND_NECKLACE);
         });
+    }
+
+    private static Item register(String name, Integer durability, Function<Item.Settings, Item> itemFactory) {
+        // 1. Create the Identifier and RegistryKey automatically
+        Identifier id = Identifier.of(LejasTrinketsMod.MOD_ID, name);
+        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
+
+        // 2. Create the Settings and apply the key
+        Item.Settings settings = new Item.Settings()
+                .registryKey(key)
+                .maxCount(1)
+                .maxDamage(durability); // Default durability for your rings
+
+        // 3. Create the Item using the factory
+        Item item = itemFactory.apply(settings);
+
+        // 4. Register it
+        return Registry.register(Registries.ITEM, id, item);
     }
 }

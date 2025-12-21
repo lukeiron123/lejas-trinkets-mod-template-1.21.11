@@ -23,6 +23,7 @@ public class IronEmeraldRingItem extends TrinketItem {
                     false
             ));
         }
+        super.tick(stack, slot, entity);
     }
 
 }
