@@ -12,14 +12,17 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import com.lejastrinkets.item.EmeraldRingItem;
+
+
 
 public class ModItems {
         public static final List<Item> ALL_ITEMS = new ArrayList<>();
-    public static final Item EMERALD_RING = registerItem("emerald_ring", new Item(
+    public static final Item EMERALD_RING = registerItem("emerald_ring", new EmeraldRingItem(
             new Item.Settings().registryKey(
                     RegistryKey.of(
                             RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"emerald_ring"))
-            )
+            ).maxCount(1)
     ));
 
     public static final Item DIAMOND_RING = registerItem("diamond_ring", new Item(
@@ -27,28 +30,28 @@ public class ModItems {
                     RegistryKey.of(
                             RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID, "diamond_ring")
                     )
-            )
+            ).maxCount(1)
     ));
 
     public static final Item IRON_RUBY_NECKLACE = registerItem("iron_ruby_necklace", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
                             RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"iron_ruby_necklace"))
-            )
+            ).maxCount(1)
     ));
 
     public static final Item GOLDEN_RUBY_NECKLACE = registerItem("golden_ruby_necklace", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
                             RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"golden_ruby_necklace"))
-            )
+            ).maxCount(1)
     ));
 
     public static final Item IRON_DIAMOND_NECKLACE = registerItem("iron_diamond_necklace", new Item(
             new Item.Settings().registryKey(
                     RegistryKey.of(
                             RegistryKeys.ITEM, Identifier.of(LejasTrinketsMod.MOD_ID,"iron_diamond_necklace"))
-            )
+            ).maxCount(1)
     ));
 
     public static final Item GOLDEN_DIAMOND_NECKLACE = registerItem("golden_diamond_necklace", new Item(
