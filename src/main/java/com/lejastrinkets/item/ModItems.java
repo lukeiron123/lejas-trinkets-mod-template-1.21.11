@@ -118,6 +118,7 @@ public class ModItems {
     }
 
     private static Item register(String name, Integer durability, Function<Item.Settings, Item> itemFactory) {
+
         // 1. Create the Identifier and RegistryKey automatically
         Identifier id = Identifier.of(LejasTrinketsMod.MOD_ID, name);
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
@@ -131,6 +132,9 @@ public class ModItems {
 
         // 3. Create the Item using the factory
         Item item = itemFactory.apply(settings);
+
+        // 3.5 Add Item to Item List hej
+        ALL_ITEMS.add(item);
 
         // 4. Register it
         return Registry.register(Registries.ITEM, id, item);
