@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "s": "minecraft:string",
+    "r": "minecraft:rabbits_foot"
+  },
+  "pattern": [
+    " s ",
+    "s s",
+    " r "
+  ],
+  "result": {
+    "count": 1,
+    "id": "lejas-trinkets-mod:rabbits_foot_necklace"
+  }
+}

@@ -14,8 +14,6 @@ import net.minecraft.server.world.ServerWorld;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
 public class LejasTrinketsMod implements ModInitializer {
 	public static final String MOD_ID = "lejas-trinkets-mod";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -34,7 +32,6 @@ public class LejasTrinketsMod implements ModInitializer {
 
                         // 3. Iterate over EVERY equipped trinket slot
 					component.forEach((slot, stack) -> {
-
 
 						// 4. FILTER: Only affect items that actually have durability logic
 						// This automatically includes your Rings/Necklaces if you set .maxDamage() on them

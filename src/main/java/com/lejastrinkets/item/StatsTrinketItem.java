@@ -28,8 +28,6 @@ public class StatsTrinketItem extends TrinketItem {
         AttributeModifiersComponent component = stack.get(DataComponentTypes.ATTRIBUTE_MODIFIERS);
 
         if (component != null) {
-            // DEBUG: Print to console to prove code is running
-            System.out.println("Applying Trinket Stats for: " + stack.getItem());
 
             component.modifiers().forEach(entry -> {
                 EntityAttributeModifier original = entry.modifier();
@@ -49,9 +47,6 @@ public class StatsTrinketItem extends TrinketItem {
 
                 modifiers.put(entry.attribute(), uniqueModifier);
             });
-        } else {
-            // DEBUG: Print if component is missing
-            System.out.println("ERROR: No Attributes found on " + stack.getItem());
         }
 
         return modifiers;

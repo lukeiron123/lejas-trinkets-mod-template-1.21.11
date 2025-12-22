@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "i": "minecraft:iron",
+    "r": "minecraft:redstone"
+  },
+  "pattern": [
+    " i ",
+    "i i",
+    " r "
+  ],
+  "result": {
+    "count": 1,
+    "id": "lejas-trinkets-mod:iron_ruby_necklace"
+  }
+}

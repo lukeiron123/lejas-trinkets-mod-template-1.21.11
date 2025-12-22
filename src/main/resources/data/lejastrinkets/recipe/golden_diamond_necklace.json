@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "g": "minecraft:gold",
+    "d": "minecraft:diamond"
+  },
+  "pattern": [
+    " g ",
+    "g g",
+    " d "
+  ],
+  "result": {
+    "count": 1,
+    "id": "lejas-trinkets-mod:golden_diamond_necklace"
+  }
+}

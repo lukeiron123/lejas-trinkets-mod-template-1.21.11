@@ -102,6 +102,18 @@ public class ModItems {
             )
     );
 
+    public static final Item GOAT_HORN_NECKLACE = register(
+            "goat_horn_necklace",
+            70,
+            settings -> new StatsTrinketItem(
+                    settings
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    ModItemModifiers.createTamedDamageModifier(0.3)
+                            )
+            )
+    );
+
 
     public static void registerModItems() {
         LejasTrinketsMod.LOGGER.info("Registering Mod Items for" + LejasTrinketsMod.MOD_ID);
@@ -114,6 +126,7 @@ public class ModItems {
             entries.add(IRON_DIAMOND_NECKLACE);
             entries.add(GOLDEN_DIAMOND_NECKLACE);
             entries.add(RABBITS_FOOT_NECKLACE);
+            entries.add(GOAT_HORN_NECKLACE);
         });
     }
 

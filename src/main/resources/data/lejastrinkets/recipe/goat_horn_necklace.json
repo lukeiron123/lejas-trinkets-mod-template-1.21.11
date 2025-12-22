@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "s": "minecraft:string",
+    "g": "minecraft:goat_horn"
+  },
+  "pattern": [
+    " s ",
+    "s s",
+    " g "
+  ],
+  "result": {
+    "count": 1,
+    "id": "lejas-trinkets-mod:goat_horn_necklace"
+  }
+}

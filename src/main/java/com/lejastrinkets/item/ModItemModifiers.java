@@ -55,4 +55,27 @@ public class ModItemModifiers {
                 )
                 .build();
     }
+
+    public static AttributeModifiersComponent createTamedDamageModifier(Double value) {
+        return AttributeModifiersComponent.builder()
+                .add(
+                        PuffishAttributes.TAMED_DAMAGE,
+                        new EntityAttributeModifier(
+                                Identifier.of(LejasTrinketsMod.MOD_ID, "necklace_tamed_damage"),
+                                value,
+                                EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                        ),
+                        AttributeModifierSlot.ANY
+                )
+                .add(
+                        PuffishAttributes.TAMED_RESISTANCE,
+                        new EntityAttributeModifier(
+                                Identifier.of(LejasTrinketsMod.MOD_ID, "necklace_tamed_resistance"),
+                                value,
+                                EntityAttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                        ),
+                        AttributeModifierSlot.ANY
+                )
+                .build();
+    }
 }

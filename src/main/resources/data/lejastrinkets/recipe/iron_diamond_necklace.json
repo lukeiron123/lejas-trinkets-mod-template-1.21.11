@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "i": "minecraft:iron",
+    "d": "minecraft:diamond"
+  },
+  "pattern": [
+    " i ",
+    "i i",
+    " d "
+  ],
+  "result": {
+    "count": 1,
+    "id": "lejas-trinkets-mod:iron_diamond_necklace"
+  }
+}

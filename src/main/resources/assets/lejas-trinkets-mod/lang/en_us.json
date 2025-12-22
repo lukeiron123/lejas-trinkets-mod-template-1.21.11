@@ -1,10 +1,11 @@
 {
   "itemgroup.lejastrinkets.all_item_group" : "Lejas Trinkets",
-  "item.lejas-trinkets-mod.emerald_ring": "Iron Emerald Ring",
-  "item.lejas-trinkets-mod.diamond_ring": "Iron Diamond Ring",
+  "item.lejas-trinkets-mod.iron_emerald_ring": "Iron Emerald Ring",
+  "item.lejas-trinkets-mod.iron_diamond_ring": "Iron Diamond Ring",
   "item.lejas-trinkets-mod.iron_ruby_necklace": "Iron Ruby Necklace",
   "item.lejas-trinkets-mod.golden_ruby_necklace": "Golden Ruby Necklace",
   "item.lejas-trinkets-mod.iron_diamond_necklace": "Iron Diamond Necklace",
   "item.lejas-trinkets-mod.golden_diamond_necklace": "Golden Diamond Necklace",
-  "item.lejas-trinkets-mod.rabbits_foot_necklace": "Rabbits Foot Necklace"
+  "item.lejas-trinkets-mod.rabbits_foot_necklace": "Rabbits Foot Necklace",
+  "item.lejas-trinkets-mod.goat_horn_necklace": "Goat Horn Necklace"
 }

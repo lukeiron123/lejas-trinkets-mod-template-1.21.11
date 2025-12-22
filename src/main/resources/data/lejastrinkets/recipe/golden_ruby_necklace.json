@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "g": "minecraft:gold",
+    "r": "minecraft:redstone"
+  },
+  "pattern": [
+    " g ",
+    "g g",
+    " r "
+  ],
+  "result": {
+    "count": 1,
+    "id": "lejas-trinkets-mod:golden_ruby_necklace"
+  }
+}
