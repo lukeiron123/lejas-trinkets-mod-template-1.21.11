@@ -5,8 +5,9 @@ import java.util.List;
 import java.util.function.Function;
 
 import com.lejastrinkets.LejasTrinketsMod;
+import dev.emi.trinkets.api.TrinketItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
@@ -16,26 +17,91 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 
-
 public class ModItems {
         public static final List<Item> ALL_ITEMS = new ArrayList<>();
-    public static final Item IRON_EMERALD_RING = register("iron_emerald_ring", 180,
-            settings -> new EffectRingItem(settings, StatusEffects.SPEED));
+    public static final Item IRON_EMERALD_RING = register(
+            "iron_emerald_ring",
+            180,
+            settings -> new StatsTrinketItem(
+                    settings
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    ModItemModifiers.createResistanceModifier(0.20)
+                            )
+            )
+    );
 
-    public static final Item IRON_DIAMOND_RING = register("iron_diamond_ring", 180,
-            settings -> new EffectRingItem(settings, StatusEffects.SPEED));
+    public static final Item IRON_DIAMOND_RING = register(
+            "iron_diamond_ring",
+            180,
+            settings -> new StatsTrinketItem(
+                    settings
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    ModItemModifiers.createDamageModifier(0.20)
+                            )
+            )
+    );
 
-    public static final Item IRON_RUBY_NECKLACE = register("iron_ruby_necklace", 180,
-            settings -> new EffectRingItem(settings, StatusEffects.STRENGTH));
+    public static final Item IRON_RUBY_NECKLACE = register(
+            "iron_ruby_necklace",
+            180,
+            settings -> new StatsTrinketItem(
+                    settings
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    ModItemModifiers.createResistanceModifier(0.20)
+                            )
+            )
+    );
 
-    public static final Item GOLDEN_RUBY_NECKLACE = register("golden_ruby_necklace", 100,
-            settings -> new EffectRingItem(settings, StatusEffects.STRENGTH));
+    public static final Item GOLDEN_RUBY_NECKLACE = register(
+            "golden_ruby_necklace",
+            100,
+            settings -> new StatsTrinketItem(
+                    settings
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    ModItemModifiers.createResistanceModifier(0.20)
+                            )
+            )
+    );
 
-    public static final Item IRON_DIAMOND_NECKLACE = register("iron_diamond_necklace", 180,
-            settings -> new EffectRingItem(settings, StatusEffects.RESISTANCE));
+    public static final Item IRON_DIAMOND_NECKLACE = register(
+            "iron_diamond_necklace",
+            180,
+            settings -> new StatsTrinketItem(
+                    settings
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    ModItemModifiers.createResistanceModifier(0.20)
+                            )
+            )
+    );
+    public static final Item GOLDEN_DIAMOND_NECKLACE = register(
+            "golden_diamond_necklace",
+            100,
+            settings -> new StatsTrinketItem(
+                    settings
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    ModItemModifiers.createResistanceModifier(0.20)
+                            )
+            )
+    );
 
-    public static final Item GOLDEN_DIAMOND_NECKLACE = register("golden_diamond_necklace", 100,
-            settings -> new EffectRingItem(settings, StatusEffects.RESISTANCE));
+    public static final Item RABBITS_FOOT_NECKLACE = register(
+            "rabbits_foot_necklace",
+            70,
+            settings -> new StatsTrinketItem(
+                    settings
+                            .component(
+                                    DataComponentTypes.ATTRIBUTE_MODIFIERS,
+                                    ModItemModifiers.createSpeedModifier(2.00)
+                            )
+            )
+    );
+
 
     public static void registerModItems() {
         LejasTrinketsMod.LOGGER.info("Registering Mod Items for" + LejasTrinketsMod.MOD_ID);
@@ -47,6 +113,7 @@ public class ModItems {
             entries.add(GOLDEN_RUBY_NECKLACE);
             entries.add(IRON_DIAMOND_NECKLACE);
             entries.add(GOLDEN_DIAMOND_NECKLACE);
+            entries.add(RABBITS_FOOT_NECKLACE);
         });
     }
 
@@ -54,6 +121,7 @@ public class ModItems {
         // 1. Create the Identifier and RegistryKey automatically
         Identifier id = Identifier.of(LejasTrinketsMod.MOD_ID, name);
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
+
 
         // 2. Create the Settings and apply the key
         Item.Settings settings = new Item.Settings()
