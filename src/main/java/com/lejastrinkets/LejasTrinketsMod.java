@@ -23,7 +23,7 @@ public class LejasTrinketsMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
-		ModItemGroups.registerItemGroups(); //d
+		ModItemGroups.registerItemGroups();
 
 		ServerLivingEntityEvents.AFTER_DAMAGE.register((entity, source, baseDamage, damageTaken, blocked) -> {
 			// 1. Ensure it's a Player and on the Server
