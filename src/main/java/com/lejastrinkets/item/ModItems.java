@@ -133,7 +133,7 @@ public class ModItems {
         // 3. Create the Item using the factory
         Item item = itemFactory.apply(settings);
 
-        // 3.5 Add Item to Item List
+        // 3.5 Add Item to Item List hej
         ALL_ITEMS.add(item);
 
         // 4. Register it
