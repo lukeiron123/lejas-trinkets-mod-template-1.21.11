@@ -19,7 +19,7 @@ Features:
 ---
     Necklaces:
     Equippable in the Necklace slot. Gives specific Status effects when worn and synergizes with the rings. 
-    The material of the necklace affects both durability and status effect level:
+    The material of the necklace affects both durability and the status effect level:
     - Copper: 
     - Iron: 
     - Gold:
