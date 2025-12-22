@@ -55,6 +55,7 @@ public class LejasTrinketsMod implements ModInitializer {
 				});
 			}
 		});
+
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
                 TrinketsApi.getTrinketComponent(player).ifPresent(component -> {
