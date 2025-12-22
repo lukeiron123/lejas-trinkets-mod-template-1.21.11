@@ -4,7 +4,10 @@ package com.lejastrinkets.item;
 import com.lejastrinkets.LejasTrinketsMod;
 import net.minecraft.component.type.AttributeModifiersComponent;
 import net.minecraft.component.type.AttributeModifierSlot;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.puffish.attributesmod.api.PuffishAttributes; // See note below if this is still red
 
