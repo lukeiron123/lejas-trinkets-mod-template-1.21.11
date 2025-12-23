@@ -8,8 +8,10 @@ import com.lejastrinkets.LejasTrinketsMod;
 import dev.emi.trinkets.api.TrinketItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
+import net.minecraft.item.BundleItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -114,6 +116,10 @@ public class ModItems {
             )
     );
 
+    public static final Item BASIC_QUIVER = register(
+            "basic_quiver", null, settings ->  new QuiverItem(settings));
+
+
 
     public static void registerModItems() {
         LejasTrinketsMod.LOGGER.info("Registering Mod Items for" + LejasTrinketsMod.MOD_ID);
@@ -136,12 +142,21 @@ public class ModItems {
         Identifier id = Identifier.of(LejasTrinketsMod.MOD_ID, name);
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
 
+        Item.Settings settings = new Item.Settings();
 
-        // 2. Create the Settings and apply the key
-        Item.Settings settings = new Item.Settings()
-                .registryKey(key)
-                .maxCount(1)
-                .maxDamage(durability); // Default durability for your rings
+        //1.1 checking if durability is null. if it's null = no durability
+        if(durability != null) {
+            // 2. Create the Settings and apply the key
+            settings
+                    .registryKey(key)
+                    .maxCount(1)
+                    .maxDamage(durability); // Default durability for your rings
+        }
+        else {
+            settings
+                    .registryKey(key)
+                    .maxCount(1);
+        }
 
         // 3. Create the Item using the factory
         Item item = itemFactory.apply(settings);
