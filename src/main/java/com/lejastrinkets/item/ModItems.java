@@ -5,18 +5,16 @@ import java.util.List;
 import java.util.function.Function;
 
 import com.lejastrinkets.LejasTrinketsMod;
-import dev.emi.trinkets.api.TrinketItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.item.BundleItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.component.type.BundleContentsComponent;
 
 
 public class ModItems {
@@ -116,8 +114,18 @@ public class ModItems {
             )
     );
 
-    public static final Item BASIC_QUIVER = register(
-            "basic_quiver", null, settings ->  new QuiverItem(settings));
+    public static final QuiverItem BASIC_QUIVER = (QuiverItem) register(
+            "basic_quiver",
+            null,
+            settings -> {
+                settings
+                        .maxCount(1)
+                        .component(DataComponentTypes.BUNDLE_CONTENTS, BundleContentsComponent.DEFAULT);
+                return new QuiverItem(settings);
+            }
+    );
+
+
 
 
 
@@ -133,6 +141,7 @@ public class ModItems {
             entries.add(GOLDEN_DIAMOND_NECKLACE);
             entries.add(RABBITS_FOOT_NECKLACE);
             entries.add(GOAT_HORN_NECKLACE);
+            entries.add(BASIC_QUIVER);
         });
     }
 
