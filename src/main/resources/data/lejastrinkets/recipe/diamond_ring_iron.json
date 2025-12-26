@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "g": "minecraft:gold",
+    "i": "minecraft:iron",
     "d": "minecraft:diamond"
   },
   "pattern": [
-    " g ",
-    "g g",
-    " d "
+    " i ",
+    "idi",
+    " i "
   ],
   "result": {
     "count": 1,
-    "id": "lejas-trinkets-mod:golden_diamond_necklace"
+    "id": "lejas-trinkets-mod:diamond_ring_iron"
   }
 }

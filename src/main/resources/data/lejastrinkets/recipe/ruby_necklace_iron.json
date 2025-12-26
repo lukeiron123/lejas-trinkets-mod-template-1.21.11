@@ -3,15 +3,15 @@
   "category": "equipment",
   "key": {
     "i": "minecraft:iron_ingot",
-    "e": "minecraft:emerald"
+    "r": "minecraft:redstone"
   },
   "pattern": [
     " i ",
-    "iei",
-    " i "
+    "i i",
+    " r "
   ],
   "result": {
     "count": 1,
-    "id": "lejas-trinkets-mod:iron_emerald_ring"
+    "id": "lejas-trinkets-mod:ruby_necklace_iron"
   }
 }

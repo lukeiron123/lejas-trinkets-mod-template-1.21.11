@@ -3,15 +3,15 @@
   "category": "equipment",
   "key": {
     "g": "minecraft:gold",
-    "r": "minecraft:redstone"
+    "d": "minecraft:diamond"
   },
   "pattern": [
     " g ",
     "g g",
-    " r "
+    " d "
   ],
   "result": {
     "count": 1,
-    "id": "lejas-trinkets-mod:golden_ruby_necklace"
+    "id": "lejas-trinkets-mod:diamond_necklace_iron"
   }
 }

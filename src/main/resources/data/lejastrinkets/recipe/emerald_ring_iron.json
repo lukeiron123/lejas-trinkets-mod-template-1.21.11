@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "i": "minecraft:iron",
-    "d": "minecraft:diamond"
+    "i": "minecraft:iron_ingot",
+    "e": "minecraft:emerald"
   },
   "pattern": [
     " i ",
-    "idi",
+    "iei",
     " i "
   ],
   "result": {
     "count": 1,
-    "id": "lejas-trinkets-mod:iron_diamond_ring"
+    "id": "lejas-trinkets-mod:emerald_ring_iron"
   }
 }

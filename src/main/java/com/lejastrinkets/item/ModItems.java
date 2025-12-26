@@ -19,8 +19,9 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
         public static final List<Item> ALL_ITEMS = new ArrayList<>();
-    public static final Item IRON_EMERALD_RING = register(
-            "iron_emerald_ring",
+
+    public static final Item EMERALD_RING_IRON = register(
+            "emerald_ring_iron",
             180,
             settings -> new StatsTrinketItem(
                     settings
@@ -31,8 +32,8 @@ public class ModItems {
             )
     );
 
-    public static final Item IRON_DIAMOND_RING = register(
-            "iron_diamond_ring",
+    public static final Item DIAMOND_RING_IRON = register(
+            "diamond_ring_iron",
             180,
             settings -> new StatsTrinketItem(
                     settings
@@ -43,8 +44,8 @@ public class ModItems {
             )
     );
 
-    public static final Item IRON_RUBY_NECKLACE = register(
-            "iron_ruby_necklace",
+    public static final Item RUBY_NECKLACE_IRON = register(
+            "ruby_necklace_iron",
             180,
             settings -> new StatsTrinketItem(
                     settings
@@ -55,8 +56,8 @@ public class ModItems {
             )
     );
 
-    public static final Item GOLDEN_RUBY_NECKLACE = register(
-            "golden_ruby_necklace",
+    public static final Item RUBY_NECKLACE_GOLD = register(
+            "ruby_necklace_gold",
             100,
             settings -> new StatsTrinketItem(
                     settings
@@ -67,8 +68,8 @@ public class ModItems {
             )
     );
 
-    public static final Item IRON_DIAMOND_NECKLACE = register(
-            "iron_diamond_necklace",
+    public static final Item DIAMOND_NECKLACE_IRON = register(
+            "diamond_necklace_iron",
             180,
             settings -> new StatsTrinketItem(
                     settings
@@ -78,8 +79,8 @@ public class ModItems {
                             )
             )
     );
-    public static final Item GOLDEN_DIAMOND_NECKLACE = register(
-            "golden_diamond_necklace",
+    public static final Item DIAMOND_NECKLACE_GOLD = register(
+            "diamond_necklace_gold",
             100,
             settings -> new StatsTrinketItem(
                     settings
@@ -119,12 +120,12 @@ public class ModItems {
         LejasTrinketsMod.LOGGER.info("Registering Mod Items for" + LejasTrinketsMod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            entries.add(IRON_EMERALD_RING);
-            entries.add(IRON_DIAMOND_RING);
-            entries.add(IRON_RUBY_NECKLACE);
-            entries.add(GOLDEN_RUBY_NECKLACE);
-            entries.add(IRON_DIAMOND_NECKLACE);
-            entries.add(GOLDEN_DIAMOND_NECKLACE);
+            entries.add(EMERALD_RING_IRON);
+            entries.add(DIAMOND_RING_IRON);
+            entries.add(RUBY_NECKLACE_IRON);
+            entries.add(RUBY_NECKLACE_GOLD);
+            entries.add(DIAMOND_NECKLACE_IRON);
+            entries.add(DIAMOND_NECKLACE_GOLD);
             entries.add(RABBITS_FOOT_NECKLACE);
             entries.add(GOAT_HORN_NECKLACE);
         });

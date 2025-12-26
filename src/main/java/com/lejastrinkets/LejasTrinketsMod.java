@@ -57,7 +57,7 @@ public class LejasTrinketsMod implements ModInitializer {
             for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
                 TrinketsApi.getTrinketComponent(player).ifPresent(component -> {
                     boolean hasNecklace = component.isEquipped(ModItems.RABBITS_FOOT_NECKLACE);
-                    boolean hasRing = component.isEquipped(ModItems.IRON_DIAMOND_RING);
+                    boolean hasRing = component.isEquipped(ModItems.DIAMOND_RING_IRON);
 
                     if(hasNecklace && hasRing) {
                         player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 40, 2, true, true));

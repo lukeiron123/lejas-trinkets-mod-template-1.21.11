@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "lejas-trinkets-mod:iron_emerald_ring",
-    "lejas-trinkets-mod:iron_diamond_ring"
+    "lejas-trinkets-mod:emerald_ring_iron",
+    "lejas-trinkets-mod:diamond_ring_iron"
   ]
 }
